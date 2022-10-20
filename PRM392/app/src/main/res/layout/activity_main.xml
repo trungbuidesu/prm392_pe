@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/student_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="HE150245_Bùi Đức Trung"
+        android:textColor="@android:color/holo_red_light"/>
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:text="Job Management"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/student_info" />
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/input_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        android:hint="Id"/>
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/input_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/input_id"
+        android:hint="Name"/>
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/input_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/input_name"
+        android:hint="Status"/>
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/input_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/input_status"
+        android:hint="Description"/>
+    <GridLayout
+        android:id="@+id/button_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:useDefaultMargins="true"
+        app:layout_constraintTop_toBottomOf="@+id/input_description">
+        <Button android:layout_columnWeight="1" android:layout_column="0" android:layout_gravity="fill" android:text="ADD"/>
+        <Button android:layout_columnWeight="1" android:layout_column="1" android:layout_gravity="fill" android:text="UPDATE"/>
+        <Button android:layout_columnWeight="1" android:layout_column="2" android:layout_gravity="fill" android:text="DELETE"/>
+        <Button android:layout_columnWeight="1" android:layout_column="3" android:layout_gravity="fill" android:text="LIST"/>
+    </GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
