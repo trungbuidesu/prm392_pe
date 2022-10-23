@@ -22,42 +22,71 @@
         android:textStyle="bold"
         android:textSize="40sp"
         android:text="Job Management"
+        android:layout_margin="40sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/student_info" />
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/input_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <GridLayout
         app:layout_constraintTop_toBottomOf="@+id/title"
-        android:hint="Id"/>
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/input_name"
+        android:id="@+id/input_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/input_id"
-        android:hint="Name"/>
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/input_status"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/input_name"
-        android:hint="Status"/>
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/input_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/input_status"
-        android:hint="Description"/>
+        android:layout_margin="40sp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_row="0"
+            android:layout_column="0"
+            android:id="@+id/input_id"
+            android:layout_gravity="fill_horizontal"
+            android:hint="id"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_row="1"
+            android:layout_column="0"
+            android:id="@+id/input_name"
+            android:layout_gravity="fill_horizontal"
+            android:layout_marginTop="20sp"
+            android:hint="name"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_row="2"
+            android:layout_column="0"
+            android:id="@+id/input_status"
+            android:layout_gravity="fill_horizontal"
+            android:layout_marginTop="20sp"
+            android:hint="status"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_row="3"
+            android:layout_column="0"
+            android:id="@+id/input_description"
+            android:layout_gravity="fill_horizontal"
+            android:layout_marginTop="20sp"
+            android:hint="description"/>
+    </GridLayout>
     <GridLayout
         android:id="@+id/button_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="35sp"
         android:useDefaultMargins="true"
-        app:layout_constraintTop_toBottomOf="@+id/input_description">
-        <Button android:layout_columnWeight="1" android:layout_column="0" android:layout_gravity="fill" android:text="ADD"/>
-        <Button android:layout_columnWeight="1" android:layout_column="1" android:layout_gravity="fill" android:text="UPDATE"/>
-        <Button android:layout_columnWeight="1" android:layout_column="2" android:layout_gravity="fill" android:text="DELETE"/>
-        <Button android:layout_columnWeight="1" android:layout_column="3" android:layout_gravity="fill" android:text="LIST"/>
+        app:layout_constraintTop_toBottomOf="@+id/input_container">
+        <Button android:id="@+id/btn_add" android:layout_columnWeight="1" android:layout_column="0" android:layout_gravity="fill" android:text="ADD"/>
+        <Button android:id="@+id/btn_update" android:layout_columnWeight="1" android:layout_column="1" android:layout_gravity="fill" android:text="UPDATE"/>
+        <Button android:id="@+id/btn_delete" android:layout_columnWeight="1" android:layout_column="2" android:layout_gravity="fill" android:text="DELETE"/>
+        <Button android:id="@+id/btn_list" android:layout_columnWeight="1" android:layout_column="3" android:layout_gravity="fill" android:text="LIST"/>
     </GridLayout>
+    <TextView
+        android:layout_margin="5sp"
+        android:id="@+id/recycler_title"
+        android:text="Result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_container"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_margin="5sp"
+        android:id="@+id/item_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="250sp"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@id/recycler_title">
+
+    </androidx.recyclerview.widget.RecyclerView>
 </androidx.constraintlayout.widget.ConstraintLayout>
